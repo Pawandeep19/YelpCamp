@@ -1,0 +1,54 @@
+/* ADD camp,comment,edit forms css */
+body{
+    background-image: url("https://images.unsplash.com/photo-1487730116645-74489c95b41b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
+    background-position-x: bottom;
+    background-size: cover;
+    text-align: center;
+    height: 721px;
+    backdrop-filter: blur(4px);
+    
+
+}
+form input{
+    display: block;
+    text-align: center;
+    margin:20px auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    width: 40rem;
+    border-radius: 5rem;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); 
+    background-color: rgb(185, 255, 228);   
+    color: red;
+    font-weight: bold;
+}
+h1{
+    margin: 0 auto;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);    
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    margin-top: 100px;
+    color:peachpuff;
+   
+}
+input:focus{
+    border-color: red;
+    outline: none;
+    border-width: 3px;
+}
+button {
+    margin-top: 50px;
+    background-color:peachpuff;
+    color:rgb(114, 21, 21);
+    font-weight: bold;
+    width: 15rem;
+    border-radius: 1rem;
+}
+button:hover{
+    background-color: rgb(107, 248, 149);
+}
+i{
+    color: red;
+} 
+

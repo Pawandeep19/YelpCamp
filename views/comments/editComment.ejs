@@ -1,0 +1,8 @@
+<%- include("../partials/header.ejs") %>
+<link rel="stylesheet" href="/stylesheets/forms.css">
+<h1>Edit </h1>
+<form method="post" action="/campground/<%=foundCampId %>/comments/<%=foundcomment._id %>?_method=PUT">
+     <input type="text" name="editedcomment[text]" value="<%=foundcomment.text %>">
+     <button>SUBMIT</button>
+</form>
+<%- include("../partials/footer.ejs") %>

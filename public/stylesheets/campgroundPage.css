@@ -1,0 +1,91 @@
+body{
+    background-color: #fffbe6;
+}
+
+
+/* jumbotron */
+.jumbotron{
+    text-transform: uppercase;
+    text-align: center;
+    background-image: url("https://i.pinimg.com/originals/87/0c/11/870c11d458524fbc1918fb4ebd4eae63.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 80%;
+    color:#fffbe6;
+    border:#442c2e 5px solid;
+    min-height: 25rem; 
+    font-weight: bold;    
+    
+}
+.jumbotron a{
+    background-color: #fffbe6;
+    color: #442c2e;
+    font-weight: bold;
+}
+.jumbotron a:hover{
+    background-color: #755054;
+    
+}
+
+h1{
+    font-family: "Arima Madurai", cursive;
+    text-shadow: 1px 2px 2px rgba(112, 17, 17, 0.933);
+    font-size: 4rem;
+    font-weight: bolder;
+   
+}
+
+
+/* campgrounds */
+#sp{
+    margin:0 100px;;
+}
+.card{
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 50px;
+   
+}
+.card a{
+    background-color:red;
+    color: white;
+}
+
+.transparent{
+    display: none;
+}
+.visible {
+    display: block;    
+    z-index: 1;
+    position: absolute;
+}
+.black{
+    background-color: black;
+    opacity: 0.8;
+    transform: scale(1.2);
+    transition: all .4s ease-in-out;
+}
+h4{
+    background-color: #442c2e;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+/* Scroll Indicator */
+  
+.progress-bar{
+    /* margin-top: 45px; */
+    height: 8px;
+    background-color: #1eff96;
+    width: 10%;
+    position: fixed;
+    top: 50px;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}

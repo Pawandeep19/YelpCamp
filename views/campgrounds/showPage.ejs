@@ -1,0 +1,80 @@
+<%- include("../partials/header") %>
+<div id="showPage">
+
+<!-- Bird Animation -->
+<!-- Its css is in main -->
+<div class="box birdsection">
+	
+	
+	<div class="bird-container bird-container--one">
+		<div class="bird bird--one"></div>
+	</div>
+	
+	<div class="bird-container bird-container--two">
+		<div class="bird bird--two"></div>
+	</div>
+	
+	<div class="bird-container bird-container--three">
+		<div class="bird bird--three"></div>
+	</div>
+	
+	<div class="bird-container bird-container--four">
+		<div class="bird bird--four"></div>
+	</div>
+
+</div>
+<!-- Bird animation ends -->
+
+
+
+<div class="box row">
+     <div class="col-md-3">
+          <h4>Yelp Camp</h4>
+          <div class="list-group">
+               <li class="list-group-item active">BEAUTY</li>
+               <li class="list-group-item ">BIRDS</li>
+               <li class="list-group-item ">PEACE</li>
+               <p><iframe src="<%= foundcamp.map %>" width="332" height="550" style="border:0;" allowfullscreen="" loading="lazy"></iframe></p>
+          </div>
+     </div>
+     <div class="col-md-8">
+          <div class="card">
+               <img class="img-fluid" src="<%= foundcamp.image %>"> 
+               <div class="caption-full">
+                    <h4><a><%=foundcamp.name %></a> <span class="float-right"><%= foundcamp.price %> Rs/night</span></h4>
+                    <p><%=foundcamp.description %></p>
+                    <p><em>Submitted by <%=foundcamp.author.username %></em></p>
+                    <% if(currentUser && foundcamp.author.id.equals(currentUser._id)){ %>
+                    <p class="form-button"><a class="btn btn-sm btn-warning" href="/campground/<%=foundcamp.id%>/edit">Edit</a>
+                    <form action="/campground/<%=foundcamp.id%>?_method=DELETE" method="POST">
+                         <button class="btn btn-sm btn-danger" >Delete</button>
+                    </form>
+                    </p>
+                    <% } %>
+               </div>
+               <p><a id="review" class="btn btn-sm btn-success" href="/campground/<%=foundcamp.id%>/comments/new">Leave a review</a> </p>
+               <p></p>
+               <hr>
+          </div>
+          <div class="card card-body bg-light">
+               <% for(var i=0;i<foundcamp.comments.length;i++){ %>
+                    <p><strong><%=foundcamp.comments[i].author.username %></strong></br>
+                    <%=foundcamp.comments[i].text %> <span class="float-right">10 days ago</span></p>
+                    <% if(currentUser && foundcamp.comments[i].author.id.equals(currentUser._id)){ %>
+                    <div class="form-button">
+                    <a class="btn btn-sm btn-warning" href="/campground/<%=foundcamp.id %>/comments/<%=foundcamp.comments[i].id %>/edit">EDIT</a>
+                    <form action="/campground/<%=foundcamp.id %>/comments/<%=foundcamp.comments[i].id %>?_method=DELETE" method="post" >
+                         <button class="btn btn-sm btn-danger" >Delete</button>
+                    </form>
+               </div>
+                    <% } %>
+                    <hr>
+               <% } %>
+               
+          </div>
+          <a class="btn btn-sm btn-secondary" href="/campground">Back to Campgrounds </a>
+          <%- include("../partials/footer.ejs") %>
+     </div>
+</div>
+</div>
+

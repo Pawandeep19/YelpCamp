@@ -1,0 +1,91 @@
+/* css for landing page effect */
+body {
+    background-color: #000;
+    font-family: 'Montserrat', sans-serif;
+  }
+  a{
+    background-color: #442c2e;
+    color: white;
+  }
+  a:hover{
+    background-color: #755356 !important; 
+    color: white !important;
+  }
+  #landing-header {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding-top: 40vh;
+  }
+  #landing-header h1 {
+    color: #fffbe6;
+    font-size: 50px;
+  }
+  .slideshow { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .slideshow li { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;
+    transform: scale(1);
+    animation: imageAnimation 30s linear infinite; 
+  }
+  .slideshow li:nth-child(1) { 
+    background-image: url(http://i.imgur.com/K3mPv14.jpg);
+  }
+  .slideshow li:nth-child(2) { 
+    background-image: url(images/pic2.jpg) ;
+    animation-delay: 6s; 
+  }
+  .slideshow li:nth-child(3) { 
+    background-image: url(https://wallpaperaccess.com/full/181060.jpg);
+    animation-delay: 12s; 
+  }
+  .slideshow li:nth-child(4) { 
+    background-image: url(https://www.germany.travel/media/redaktion/content/natur_aktiv_content/camping/Mettlach_Uebernachten_in_Portaledges_im_Baum_mit_Blick_auf_die_Saarschleife.jpg);
+    animation-delay: 18s; 
+  }
+  .slideshow li:nth-child(5) { 
+    background-image: url(https://images5.alphacoders.com/555/thumb-1920-555700.jpg);
+    animation-delay: 24s; 
+  }
+  @keyframes imageAnimation { 
+    0% { 
+      opacity: 0; 
+      animation-timing-function: ease-in;
+      transform: scale(1);
+    }
+    10% {
+      opacity: 1;
+      animation-timing-function: ease-out;
+      transform: scale(1.1);
+    }
+    20% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    30% {
+      opacity: 0;
+      transform: scale(1.3);
+    }
+  }
+  /* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}

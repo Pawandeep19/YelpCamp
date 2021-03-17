@@ -1,0 +1,16 @@
+<%- include("../partials/header.ejs") %>
+<link rel="stylesheet" href="/stylesheets/forms.css">
+<div class="bg-image"></div>
+<div class="container">
+<h1>Add New Campground</h1>
+<form method="post" action="/campground">
+     <input type="text" name="name" placeholder="Camp Name">
+     <input type="text" name="image" placeholder="Image url">
+     <input type="text" name="description" placeholder="About Camp">
+     <input type="text" name="price" placeholder="Price/night">
+     <input type="text" name="map" placeholder="Map Location url">     
+
+     <button>SUBMIT <i class="far fa-paper-plane"></i></button>
+</form>
+</div>
+<%- include("../partials/footer.ejs") %>
