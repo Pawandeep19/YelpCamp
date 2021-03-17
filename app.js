@@ -14,7 +14,9 @@ var express      =require("express"),
 
 
 app.use(bodyParser.urlencoded({extended:true}));
-mongoose.connect("mongodb://localhost/Pawan_Yelp_Camp",{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false ,useCreateIndex:true});
+mongoose.connect("mongodb+srv://pawandeep19:pawan123@cluster0.xkqi0.mongodb.net/Pawan-Yelp-Database?retryWrites=true&w=majority",{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false ,useCreateIndex:true}).then(()=>{
+    console.log("Mongodb connected");
+});
 app.use(express.static(__dirname+"/public"));
 app.use(methodOverride("_method"));
 seedDB();
@@ -58,6 +60,6 @@ app.use("/",indexRoute);
 
 
 //listen
-app.listen(3000,function(){
+app.listen(process.env.PORT || 3000,function(){
     console.log("server is starting");
 });
