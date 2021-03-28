@@ -22,7 +22,8 @@ var mailOptions = {
     from: 'process.env.EMAIL',
     to: '',
     subject: 'Welcome to YelpCamp!',
-    html: '<h1>Dear user,</h1><p>Thank You :)  You are successfully registered to the YelpCamp.<br> Please go and explore our beautiful website and feel free to drop suggestions / queries at : pawanyelpcamp@gmail.com <br>Website link: http://pawan-yelp-camp.herokuapp.com/ </p><p>Regards <em>Pawandeep Singh</em> </p>'        
+    html: '<h1>Dear user,</h1><p>Thank You :)  You are successfully registered to the YelpCamp.<br> Please go and explore our beautiful website and feel free to drop suggestions / queries at : pawanyelpcamp@gmail.com <br>Website link: http://pawan-yelp-camp.herokuapp.com/ </p><p>Regards <em>Pawandeep Singh</em> </p>',
+    text:'Verification Mail' 
 };
 
 //nodemailer ends
