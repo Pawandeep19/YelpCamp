@@ -9,7 +9,8 @@ var express      =require("express"),
     passport     =require("passport"),
     localStrategy=require("passport-local"),
     methodOverride=require("method-override");
-
+    var nodemailer = require('nodemailer');
+    require('dotenv').config();
 
 
 
@@ -19,7 +20,7 @@ mongoose.connect("mongodb+srv://pawandeep19:pawan123@cluster0.xkqi0.mongodb.net/
 });
 app.use(express.static(__dirname+"/public"));
 app.use(methodOverride("_method"));
-// seedDB();
+
 
 
 //passport configuration

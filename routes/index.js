@@ -2,7 +2,28 @@ var express=require("express");
 var router=express.Router();
 var passport=require("passport");
 var User=require("../models/user.js");
+var nodemailer = require('nodemailer');
+require('dotenv').config();
 
+//node mailer
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.PASSWORD
+    }
+});
+  
+var mailOptions = {
+    from: 'process.env.EMAIL',
+    to: '',
+    subject: 'Welcome to YelpCamp!',
+    html: '<h1>Dear user,</h1><p>Congratulations! You are successfully registered to the YelpCamp.<br> Please go and explore our beautiful website and feel free to drop suggestions / queries at : pawanyelpcamp@gmail.com <br>Website link: http://pawan-yelp-camp.herokuapp.com/ </p><p>Regards <em>Pawandeep Singh</em> </p>'        
+};
+
+//nodemailer ends
+      
+  
 //home route
 router.get("/",function(req,res){
     res.render("landingPage.ejs");
@@ -20,14 +41,27 @@ router.get("/register",function(req,res){
 
 //register form submitted to
 router.post("/register",function(req,res){
-    var registeredUser=new User({username:req.body.username});
+    var registeredUser=new User({username:req.body.username,email:req.body.emailAdress});
     User.register(registeredUser,req.body.password,function(err,user){
         if(err){
             console.log(err);
             return res.render("loginPage.ejs");
         }
         passport.authenticate("local")(req,res,function(){
+
+           //send mail
+           mailOptions.to=registeredUser.email+', '+process.env.EMAIL;
+           transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+              console.log(error);
+            } else {
+              console.log('Email sent: ' + info.response);
+            }
+            });
+
+            //redirect
              res.redirect("/campground");
+
         });
     });
 });
