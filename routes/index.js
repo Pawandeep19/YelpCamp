@@ -22,8 +22,9 @@ var mailOptions = {
     from: 'process.env.EMAIL',
     to: '',
     subject: 'Welcome to YelpCamp!',
-    // html: '<h1>Dear user,</h1><p>You are successfully registered to the YelpCamp.<br> Please go and explore our beautiful website and feel free to drop suggestions / queries at : pawanyelpcamp@gmail.com <br>Website link: http://pawan-yelp-camp.herokuapp.com/ </p><p>Regards <em>Pawandeep Singh</em> </p>',
-    text:'Amazing broo, You are successfully registered to the YelpCamp .ask me for help' 
+    text:'Dear user,You are successfully registered to the YelpCamp. Please go and explore our beautiful website and feel free to drop suggestions / queries at : pawanyelpcamp@gmail.com . Website link: http://pawan-yelp-camp.herokuapp.com/  Regards Pawandeep Singh',
+    html: '<h1>Dear user,</h1><p>You are successfully registered to the YelpCamp.<br> Please go and explore our beautiful website and feel free to drop suggestions / queries at : pawanyelpcamp@gmail.com <br>Website link: http://pawan-yelp-camp.herokuapp.com/ </p><p>Regards <em>Pawandeep Singh</em> </p>'
+    
 };
 
 //nodemailer ends
