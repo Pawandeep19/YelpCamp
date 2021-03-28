@@ -7,7 +7,11 @@ require('dotenv').config();
 
 //node mailer
 var transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host:'smtp.gmail.com',
+    port:587,
+    secure:false,
+    requireTLS:true,
+    // service: 'gmail',
     auth: {
       user: process.env.EMAIL,
       pass: process.env.PASSWORD
@@ -18,7 +22,7 @@ var mailOptions = {
     from: 'process.env.EMAIL',
     to: '',
     subject: 'Welcome to YelpCamp!',
-    html: '<h1>Dear user,</h1><p>Thank You! You are successfully registered to the YelpCamp.<br> Please go and explore our beautiful website and feel free to drop suggestions / queries at : pawanyelpcamp@gmail.com <br>Website link: http://pawan-yelp-camp.herokuapp.com/ </p><p>Regards <em>Pawandeep Singh</em> </p>'        
+    html: '<h1>Dear user,</h1><p>Thank You :)  You are successfully registered to the YelpCamp.<br> Please go and explore our beautiful website and feel free to drop suggestions / queries at : pawanyelpcamp@gmail.com <br>Website link: http://pawan-yelp-camp.herokuapp.com/ </p><p>Regards <em>Pawandeep Singh</em> </p>'        
 };
 
 //nodemailer ends
