@@ -40,6 +40,7 @@ router.post("/",isLoggedIn,function(req,res){
             camps.author.id=req.user._id;
             camps.author.username=req.user.username;
             camps.save();
+            req.flash("success","Campground added successfully!");
             res.redirect("/campground");
          }
      });
@@ -101,6 +102,7 @@ router.delete("/:id",checkownership,function(req,res){
         if(err){
             res.redirect("/campground");
         } else{
+            req.flash("success","Campground Deleted successfully!");
             res.redirect("/campground");
         }
     });
@@ -111,6 +113,7 @@ function isLoggedIn(req,res,next){
     if(req.isAuthenticated()){
         return next();
     }
+    req.flash("error","You must be Logged In to that!")
     res.redirect("/login")
 }
 

@@ -3,6 +3,7 @@ var router=express.Router();
 var passport=require("passport");
 var User=require("../models/user.js");
 var nodemailer = require('nodemailer');
+var flash=require("connect-flash");
 require('dotenv').config();
 
 //node mailer
@@ -51,6 +52,7 @@ router.post("/register",function(req,res){
     User.register(registeredUser,req.body.password,function(err,user){
         if(err){
             console.log(err);
+            req.flash("error",err.message);
             return res.render("loginPage.ejs");
         }
         passport.authenticate("local")(req,res,function(){
@@ -65,7 +67,8 @@ router.post("/register",function(req,res){
               console.log('Email sent: ' + info.response);
             }
             });
-
+            //flash
+            req.flash("success","Welcome to YelpCamp "+req.user.username);
             //redirect
              res.redirect("/campground");
 
@@ -91,6 +94,7 @@ router.post("/login",passport.authenticate("local",{
 //=====
 router.get("/logout",function(req,res){
     req.logout();
+    req.flash("success","Logged Out successfully!");
     res.redirect("/campground");
 });
 

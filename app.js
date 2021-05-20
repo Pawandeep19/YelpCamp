@@ -2,6 +2,7 @@ var express      =require("express"),
     app          =express(),
     bodyParser   =require("body-parser"),
     mongoose     =require("mongoose"),
+    flash        =require("connect-flash"),
     campG        =require("./models/campgrounds.js"),
     seedDB       = require("./seeds.js"),
     Comment      =require("./models/comments.js"),
@@ -20,6 +21,7 @@ mongoose.connect("mongodb+srv://pawandeep19:pawan123@cluster0.xkqi0.mongodb.net/
 });
 app.use(express.static(__dirname+"/public"));
 app.use(methodOverride("_method"));
+app.use(flash());
 
 
 
@@ -38,6 +40,8 @@ passport.deserializeUser(User.deserializeUser());
 //for sending username to everypage
 app.use(function(req,res,next){
     res.locals.currentUser=req.user;
+    res.locals.error=req.flash("error");
+    res.locals.success=req.flash("success");
     next();
 });
 

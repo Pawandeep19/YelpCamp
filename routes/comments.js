@@ -39,6 +39,7 @@ router.post("/",isLoggedIn,function(req,res){
                     comment.save();
                     foundcamp.comments.push(comment);
                     foundcamp.save();
+                    req.flash("success","Comment Added!");
                     res.redirect("/campground/"+req.params.id);
                 }
             });
@@ -73,6 +74,7 @@ router.delete("/:comments_id",checkownership,function(req,res){
         if(err){
             console.log(err);
         } else{
+            req.flash("success","Comment Deleted!");
             res.redirect("/campground/"+req.params.id);
         }
     });
@@ -83,6 +85,7 @@ function isLoggedIn(req,res,next){
     if(req.isAuthenticated()){
         return next();
     }
+    req.flash("error","You must be Logged In to do that");
     res.redirect("/login")
 }
 
