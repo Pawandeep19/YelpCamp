@@ -8,11 +8,11 @@ require('dotenv').config();
 
 //node mailer
 var transporter = nodemailer.createTransport({
-    // host:'smtp.gmail.com',
-    // port:587,
-    // secure:false,
-    // requireTLS:true,
-    service: 'gmail',
+    host:'smtp.gmail.com',
+    port:587,
+    secure:false,
+    requireTLS:true,
+    // service: 'gmail',
     auth: {
       user: process.env.EMAIL,
       pass: process.env.PASSWORD
@@ -20,8 +20,8 @@ var transporter = nodemailer.createTransport({
 });
   
 var mailOptions = {
-    from: 'process.env.EMAIL',
-    to: "process.env.EMAIL,req.user.email",
+    from: 'pawanyelpcamp@gmail.com',
+    to: 'pawanyelpcamp@gmail.com,req.user.email',
     subject: 'Welcome to YelpCamp',
     // text:'Welcome to YelpCamp!, You are successfully registered to the YelpCamp. Please go and explore our beautiful website and feel free to drop suggestions / queries at : pawanyelpcamp@gmail.com . Website link: http://pawan-yelp-camp.herokuapp.com/  Regards Pawandeep Singh',
     html: '<h1>Welcome to YelpCamp!</h1><p>You are successfully registered to the YelpCamp.<br> Please go and explore our beautiful website and feel free to drop suggestions / queries at : pawanyelpcamp@gmail.com <br>Website link: http://pawan-yelp-camp.herokuapp.com/ </p><p>Regards <em>Pawandeep Singh</em> </p>'
