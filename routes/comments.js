@@ -2,6 +2,8 @@ var express=require("express");
 var router=express.Router({mergeParams:true});
 var campG=require("../models/campgrounds.js");
 var Comment=require("../models/comments.js");
+var moment =require("moment");
+
 
 
 
@@ -36,6 +38,7 @@ router.post("/",isLoggedIn,function(req,res){
                 } else{
                     comment.author.username=req.user.username;
                     comment.author.id=req.user._id;
+                    comment.time=moment().format("dddd, MMMM Do YYYY");
                     comment.save();
                     foundcamp.comments.push(comment);
                     foundcamp.save();

@@ -59,7 +59,7 @@
           <div class="card card-body bg-light">
                <% for(var i=0;i<foundcamp.comments.length;i++){ %>
                     <p><strong><%=foundcamp.comments[i].author.username %></strong></br>
-                    <%=foundcamp.comments[i].text %> <span class="float-right">10 days ago</span></p>
+                    <%=foundcamp.comments[i].text %> <span class="float-right"><%= foundcamp.comments[i].time %></span></p>
                     <% if(currentUser && foundcamp.comments[i].author.id.equals(currentUser._id)){ %>
                     <div class="form-button">
                     <a class="btn btn-sm btn-warning" href="/campground/<%=foundcamp.id %>/comments/<%=foundcamp.comments[i].id %>/edit">EDIT</a>
