@@ -26,7 +26,7 @@ To see the app in action, go to [https://pawan-yelp-camp.herokuapp.com/](https:/
   
   * Responsive web design
 
-## Feautures to be added
+## Extra newly added features
 * Flash messages responding to users' interaction with the app
 * Show the date of the comment
 * Email the user on successful signup
@@ -71,7 +71,7 @@ Some comments in the source code are course notes and therefore might not seem n
 * [express-session](https://github.com/expressjs/session#express-session)
 * [method-override](https://github.com/expressjs/method-override#method-override)
 
-## Will be Adding
+## Newly Added
 * [nodemailer](https://nodemailer.com/about/)
 * [moment](https://momentjs.com/)
 * [connect-flash](https://github.com/jaredhanson/connect-flash#connect-flash)
