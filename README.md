@@ -3,6 +3,8 @@
 ## Live Demo
 
 To see the app in action, go to [https://pawan-yelp-camp.herokuapp.com/](https://pawan-yelp-camp.herokuapp.com/)
+<p> <img src="https://images5.alphacoders.com/555/thumb-1920-555700.jpg" /> </p>
+
 
 ## Features
 
